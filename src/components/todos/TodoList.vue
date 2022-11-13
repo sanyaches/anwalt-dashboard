@@ -1,6 +1,6 @@
 <template>
   <div class="todo-list">
-    My Todo's
+    <h3>My Todo's</h3>
     <div class="mt-3">
       <div class="grid-layout">
         <TodoCard v-for="item of todos" :key="item.id" :todo="item" />

@@ -1,6 +1,6 @@
 <template>
   <div class="post-list">
-    Latest posts
+    <h3>Latest posts</h3>
     <div class="mt-3">
       <div class="grid-layout">
         <PostCard v-for="item of posts" :key="item.id" :post="item" />
