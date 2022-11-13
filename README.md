@@ -2,6 +2,16 @@
 
 ## Task: Create dashboard for posts and todos
 
+### Tech stack:
+- Docker
+- Webpack v5
+- Typescript
+- Vue v3
+- Pinia
+- Bootstrap v5
+- SCSS
+- HTML
+
 ### Instructions for local deployment
 
 1) Run the following command to reproduce locally (be sure that your port 9090 is free):
