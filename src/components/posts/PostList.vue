@@ -3,7 +3,7 @@
     Latest posts
     <ul >
       <li v-for="post in posts" :key="post.id">
-        <div>{{ post.id }}</div>
+        <div class="post-card">{{ post.id }}</div>
       </li>
     </ul>
   </div>

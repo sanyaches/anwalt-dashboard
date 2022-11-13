@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import { useAppStore } from '@/stores'
 import { apiService } from '@/api/apiService'
 import { createPinia } from 'pinia'
+import '@/styles/index.scss'
 import App from './App.vue'
 
 const secretToken = '87c2c85a445a630a60d4d409a38ee424a31c944eb87c453e0dd20bb9ffcae33e';

@@ -13,7 +13,7 @@ module.exports = {
     alias: {
       '@': path.resolve(__dirname, 'src'),
     },
-    extensions: ['.mjs', '.js', '.ts', '.tsx', '.vue', '.json'],
+    extensions: ['.mjs', '.js', '.ts', '.tsx', '.vue', '.json', '.scss'],
   },
   plugins: [
     new webpack.DefinePlugin({
@@ -38,6 +38,14 @@ module.exports = {
         options: {
           appendTsSuffixTo: [/\.vue$/]
         }
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader',
+        ]
       }
     ]
   },
