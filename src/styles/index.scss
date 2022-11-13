@@ -1,1 +1,11 @@
-@import 'post-card'
+@import "~bootstrap/scss/bootstrap";
+@import 'card';
+@import 'grid-layout';
+
+:root {
+  --border-color: #888;
+}
+
+html {
+  font-size: 16px;
+}
