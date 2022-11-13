@@ -1,7 +1,7 @@
 <template>
-  <div class="container">
-    <h1 class="pt-5 text-center">My Dashboard</h1>
-    <PostList :posts="posts" />
+  <div class="container py-4">
+    <h1 class="pt-5 text-center mb-5">My Dashboard</h1>
+    <PostList :posts="posts" class="mb-5" />
     <TodoList :todos="todos" />
   </div>
 </template>

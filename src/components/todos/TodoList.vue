@@ -1,20 +1,25 @@
 <template>
   <div class="todo-list">
     My Todo's
-    <ul >
-      <li v-for="todo in todos" :key="todo.id">
-        <div>{{ todo.id }}</div>
-      </li>
-    </ul>
+    <div class="mt-3">
+      <div class="grid-layout">
+        <TodoCard v-for="item of todos" :key="item.id" :todo="item" />
+      </div>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import type { Todo } from '@/types'
 import type { PropType } from 'vue'
+import TodoCard from './TodoCard.vue'
 
 export default {
   name: 'TodoList',
+
+  components: {
+    TodoCard,
+  },
 
   props: {
     todos: {

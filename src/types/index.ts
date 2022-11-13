@@ -1,9 +1,17 @@
 export type Post = {
-  id: string
+  id: string,
+  title: string,
+}
+
+export enum TodoStatus {
+  pending = 'pending',
+  completed = 'completed',
 }
 
 export type Todo = {
-  id: string
+  id: number,
+  title: string,
+  status: TodoStatus;
 }
 
 export type User = {

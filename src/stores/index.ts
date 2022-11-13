@@ -23,7 +23,7 @@ export const useAppStore = defineStore('app', {
     },
 
     loadUser () {
-      this.user = { userId: '21' }
+      this.user = { userId: '4619' }
     },
 
     async loadPosts() {
@@ -37,7 +37,7 @@ export const useAppStore = defineStore('app', {
         return
       }
 
-      const todos = await apiService.request<Todo[]>('todos')
+      const todos = await apiService.request<Todo[]>(`users/${this.user.userId}/todos`)
       this.todos = todos
     },
   },
