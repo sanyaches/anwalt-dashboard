@@ -7,4 +7,5 @@
 Run the following command to reproduce locally:
 
 ``docker build -t anwalt-dashboard .``
+
 ``docker run -dp 9090:9090 anwalt-dashboard``
