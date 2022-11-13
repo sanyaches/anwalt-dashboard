@@ -1,8 +1,8 @@
 <template>
   <div class="card todo-card">
     <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" :checked="checked">
-      <label class="form-check-label" for="flexCheckDefault">
+      <input class="form-check-input" type="checkbox" :value="todo.id" :id="`checkbox_${todo.id}`" :checked="checked">
+      <label class="form-check-label" :for="`checkbox_${todo.id}`">
         {{ todo.title }}
       </label>
     </div>
