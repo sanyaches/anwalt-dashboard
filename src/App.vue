@@ -1,8 +1,8 @@
 <template>
   <div class="container py-4">
     <h1 class="pt-5 text-center mb-5">My Dashboard</h1>
-    <PostList :posts="posts" class="mb-5" />
-    <TodoList :todos="todos" />
+    <PostList :posts="posts" :loading="loadingPosts" class="mb-5" />
+    <TodoList :todos="todos" :loading="loadingTodos" />
   </div>
 </template>
 
@@ -24,10 +24,14 @@ export default defineComponent({
     const appStore = useAppStore();
     const posts = computed(() => appStore.posts)
     const todos = computed(() => appStore.todos)
+    const loadingPosts = computed(() => appStore.loadingPosts)
+    const loadingTodos = computed(() => appStore.loadingTodos)
 
     return {
       posts,
       todos,
+      loadingPosts,
+      loadingTodos,
     }
   }
 })

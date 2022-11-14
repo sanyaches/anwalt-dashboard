@@ -6,6 +6,8 @@ type AppState = {
   user: User | null,
   posts: Post[],
   todos: Todo[],
+  loadingTodos: boolean,
+  loadingPosts: boolean,
 }
 
 export const useAppStore = defineStore('app', {
@@ -13,6 +15,8 @@ export const useAppStore = defineStore('app', {
     user: null,
     posts: [],
     todos: [],
+    loadingTodos: false,
+    loadingPosts: false,
   }),
 
   actions: {
@@ -27,18 +31,24 @@ export const useAppStore = defineStore('app', {
     },
 
     async loadPosts() {
-      const posts = await apiService.request<Post[]>('posts')
-      this.posts = posts
+      try {
+        this.loadingPosts = true
+        const posts = await apiService.request<Post[]>('posts')
+        this.posts = posts
+      } finally {
+        this.loadingPosts = false
+      }
     },
 
     async loadTodos() {
-      if (!this.user?.userId) {
-        console.error('[Error] AppStore.loadTodos: userId is not defined')
-        return
+      try {
+        this.loadingTodos = true
+        // No results for special userId, show all
+        const todos = await apiService.request<Todo[]>('todos')
+        this.todos = todos
+      } finally {
+        this.loadingTodos = false
       }
-
-      const todos = await apiService.request<Todo[]>(`users/${this.user.userId}/todos`)
-      this.todos = todos
     },
   },
 })

@@ -2,9 +2,11 @@
   <div class="todo-list">
     <h3>My Todo's</h3>
     <div class="mt-3">
-      <div class="grid-layout">
+      <div v-if="loading">Loading ...</div>
+      <div v-else-if="todos.length" class="grid-layout">
         <TodoCard v-for="item of todos" :key="item.id" :todo="item" />
       </div>
+      <div v-else>No todo's found</div>
     </div>
   </div>
 </template>
@@ -26,6 +28,10 @@ export default {
       required: true,
       type: Object as PropType<Array<Todo>>
     },
+    loading: {
+      required: true,
+      type: Boolean
+    }
   }
 }
 </script>
